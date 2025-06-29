@@ -177,23 +177,7 @@
     function generateHTML() {
       const json = JSON.stringify(questions, null, 2);
       const template = `
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Quiz</title>
-  <style>
-    body { font-family: Arial; text-align: center; background: #f0f0f0; }
-    .question { background: #fff; margin: 20px; padding: 20px; border-radius: 10px; }
-    .option { background: #eee; padding: 10px; margin: 5px; cursor: pointer; }
-    .option:hover { background: #ddd; }
-    #timer { font-size: 20px; }
-  </style>
-</head>
-<body>
-  <h2>Quiz</h2>
-  <div id="quiz"></div>
-  <div id="timer"></div>
-  <div id="score"></div>
+
 <script>
 const questions = ${json};
 let index = 0, score = 0, timer;
@@ -233,8 +217,7 @@ function endQuiz() {
 }
 showQuestion();
 <\/script>
-</body>
-</html>`;
+`;
       document.getElementById("quizOutput").value = template;
     }
 
@@ -254,4 +237,3 @@ showQuestion();
   </script>
 </body>
 </html>
-
